@@ -211,6 +211,14 @@ describe('arn', () => {
           resource: 'my_corporate_bucket/object.zip',
           arnFormat: ArnFormat.NO_RESOURCE_NAME,
         },
+        'arn:aws:codepipeline:us-east-1:123456789012:MyPipelineResource': {
+          partition: 'aws',
+          service: 'codepipeline',
+          region: 'us-east-1',
+          account: '123456789012',
+          resource: 'MyPipelineResource',
+          arnFormat: ArnFormat.NO_RESOURCE_NAME,
+        },
       };
 
       for (const [arn, expectedComponents] of Object.entries(tests)) {
